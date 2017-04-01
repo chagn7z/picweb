@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+    <script src="{{ url_for('static', filename='./list.js') }}" type="text/javascript"></script>
+</head>
+<body>
+    <ul id="navigation">
+    {% for item in navigation %}
+        <li><a href="{{ item['href'] }}">{{ item['caption'] }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <h1>My Webpage</h1>
+    {{ a_variable }}
+
+    {# a comment #}
+    <table>
+    	<tr>
+    		<th>#</th>
+    		<th>path</th>
+    	</tr>
+    	{% for item in list_data.dir_list %}
+    	<tr>
+    		<td>{{loop.index}}</td>
+    		<td>{{item}}</td>
+    	</tr>
+    	{% endfor %}
+    </table>
+
+</body>
+</html>
